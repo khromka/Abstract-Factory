@@ -1,0 +1,14 @@
+#pragma once
+#include "IFurnitureFactory.h"
+#include "../furniture/VictorianChair.h"
+#include "../furniture/VictorianSofa.h"
+
+class VictorianFurnitureFactory : public IFurnitureFactory {
+public:
+    std::unique_ptr<IChair> createChair() const override {
+        return std::make_unique<VictorianChair>();
+    }
+    std::unique_ptr<ISofa> createSofa() const override {
+        return std::make_unique<VictorianSofa>();
+    }
+};
